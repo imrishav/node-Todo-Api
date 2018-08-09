@@ -12,12 +12,21 @@ MongoClient.connect('mongodb://localhost:27017',{useNewUrlParser:true},(err, cli
 
 //     
 
-    //Delete findOneAndDelete
-    database.collection('Todos').findOneAndDelete({completed: false}).then((count)=>{
-        console.log(count)
-        // console.log(JSON.stringify(count,undefined,2))
-   },(err) => {
-       console.log("Unable to Fetch",err)
-   })
+ 
+    database.collection('Users').findOneAndUpdate({
+        _id: new ObjectID('5b6c6ba99c412e25f4687a05')
+    },{
+        $set: {
+            name: "RISHAV SINHA"
+        },
+        $inc:{
+            age : 2
+        }
+    },{
+        returnOriginal : false
+    }).then((result)=>{
+        console.log(result)
+    })
+
     // db.close();
 });
