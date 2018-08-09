@@ -23,11 +23,10 @@ MongoClient.connect('mongodb://localhost:27017', {useNewUrlParser: true},(err, c
 
     // });
 
-    database.collection('Users').insertOne({
+    database.collection('Todos').insertOne({
         
-        name: "Rishav",
-        age: 20,
-        location: "Noida"
+        text: "Eat Lunch",
+        completed: false
 
     }, (err, result)=>{
         if(err){
