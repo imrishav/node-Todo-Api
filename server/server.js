@@ -23,15 +23,12 @@ app.post('/todos', (req, res) =>{
     })
 })
 
-
-
-
-
-
 app.listen(3000, ()=>{
     console.log("started server")
 })
 
+
+module.exports = {app}
 
 
 
